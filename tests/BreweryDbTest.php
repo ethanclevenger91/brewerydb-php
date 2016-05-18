@@ -1,10 +1,9 @@
 <?php
 
-namespace ethanclevenger91\BreweryDb\Tests;
-
 use GuzzleHttp\Client;
+use BreweryDb\BreweryDb;
 
-class BreweryDbTest extends PHPUnit_Framework_TestCase {
+class BreweryDbTest extends \PHPUnit_Framework_TestCase {
 
   private $breweryDbInstance;
   private $key = 'asdfqwer';

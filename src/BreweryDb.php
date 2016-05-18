@@ -1,6 +1,6 @@
 <?php
 
-namespace ethanclevenger91\BreweryDb;
+namespace BreweryDb;
 
 use GuzzleHttp\Client;
 
@@ -14,7 +14,7 @@ class BreweryDb {
   public function getQueryArgs() {
     return $this->queryArgs;
   }
-  
+
   public function setQueryArgs($args) {
     $args['key'] = $this->key;
     $this->queryArgs = $args;

@@ -10,6 +10,10 @@ class BreweryDb {
 
   private $queryArgs;
 
+  public function setKey($key) {
+    $this->key = $key;
+  }
+
   public function getQueryArgs() {
     return array_merge(['key' => $this->key], $this->queryArgs);
   }

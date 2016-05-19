@@ -2,9 +2,10 @@
 
 namespace Ethanclevenger91\BreweryDb;
 
+use GuzzleHttp\Client;
+
 class BreweryDb {
   private $client;
-  private $version = 'v2';
   private $key;
 
   private $queryArgs;
@@ -25,10 +26,11 @@ class BreweryDb {
 
   public function request($endpoint, $method = 'GET', $args = null) {
     if($args) {
-      $this->updateArgs($args);
+      $this->setQueryArgs($args);
     }
     return $this->client->request($method, $endpoint, [
-      'query' => $this->getQueryArgs()
+      'query' => $this->getQueryArgs(),
+      'debug' => true
     ]);
   }
 }

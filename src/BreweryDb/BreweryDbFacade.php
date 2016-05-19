@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Facade;
 
-class EntrustFacade extends Facade
+class BreweryDbFacade extends Facade
 {
     /**
      * Get the registered name of the component.

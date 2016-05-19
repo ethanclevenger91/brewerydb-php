@@ -11,13 +11,13 @@ class BreweryDbServiceProvider extends ServiceProvider {
   public function boot() {
     $this->publishes([
         __DIR__.'/../config/config.php' => config_path('brewerydb.php')
-    ],'config');
+    ]);
   }
 
   public function register() {
       $this->app->singleton('brewerydb', function ($app) {
           return new BreweryDb(new Client([
-            'baseUri' => 'http://api.brewerydb.com/{version}'
+            'base_uri' => 'http://api.brewerydb.com/{version}/'
           ]));
       });
 

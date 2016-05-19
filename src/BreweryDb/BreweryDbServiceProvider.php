@@ -16,9 +16,11 @@ class BreweryDbServiceProvider extends ServiceProvider {
 
   public function register() {
       $this->app->singleton('brewerydb', function ($app) {
-          return new BreweryDb(new Client([
-            'base_uri' => 'http://api.brewerydb.com/{version}/'
+          $breweryDb = new BreweryDb(new Client([
+            'base_uri' => 'http://api.brewerydb.com/{version}/',
+            'version' => config('brewerydb.api_version'),
           ]));
+          $breweryDb->key = config('brewerydb.api_key');
       });
 
       $this->app->alias('brewerydb', BreweryDb::class);

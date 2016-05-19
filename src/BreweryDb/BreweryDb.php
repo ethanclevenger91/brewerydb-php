@@ -19,9 +19,7 @@ class BreweryDb {
   }
 
   public function __construct(Client $client) {
-    $client->version = config('brewerydb.api_version');
     $this->client = $client;
-    $this->key = config('brewerydb.api_key');
   }
 
   public function request($endpoint, $method = 'GET', $args = null) {

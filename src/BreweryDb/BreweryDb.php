@@ -31,8 +31,7 @@ class BreweryDb {
       $this->setQueryArgs($args);
     }
     return $this->client->request($method, $endpoint, [
-      'query' => $this->getQueryArgs(),
-      'debug' => true
+      'query' => $this->getQueryArgs()
     ]);
   }
 }
